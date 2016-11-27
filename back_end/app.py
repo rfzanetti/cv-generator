@@ -6,7 +6,6 @@ def geraCurriculo(dados):
     content = r'''\documentclass[a4paper,10pt]{article}
     \usepackage{hyperref}
     \usepackage[portuguese]{babel}
-    \usepackage[T1]{fontenc}
     \usepackage[utf8]{inputenc}
     \begin{document}
     \pagestyle{empty}
@@ -35,7 +34,7 @@ def geraCurriculo(dados):
     with open(texFileName,'w') as f:
         f.write(content)
 
-    cmd = "pdflatex -interaction nonstopmode " + texFileName
+    cmd = "/usr/bin/pdflatex -interaction nonstopmode " + texFileName
     os.system(cmd)
 
     os.unlink(texFileName)
