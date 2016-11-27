@@ -1,6 +1,6 @@
 from app import geraCurriculo
 from flask_cors import CORS, cross_origin
-from flask import Flask, request, abort, jsonify
+from flask import Flask, request, abort, jsonify, send_from_directory
 
 def create_app():
     app = Flask(__name__)
@@ -13,6 +13,6 @@ def create_app():
 
         fileName = geraCurriculo(request.json)
 
-        return fileName
+        return send_from_directory('/home/charles/cv-generator', fileName)
 
     return app
