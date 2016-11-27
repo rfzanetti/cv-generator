@@ -30,7 +30,7 @@ def geraCurriculo(dados):
     content += "\end{document}"
 
     ms = int(round(time.time() * 1000))
-    texFileName = "static/" + str(ms) + ".tex"
+    texFileName = os.getcwd() + "static/" + str(ms) + ".tex"
 
     with open(texFileName,'w') as f:
         f.write(content)
@@ -46,10 +46,10 @@ def geraCurriculo(dados):
     out = str(ms) + ".out"
     os.unlink(out)
 
-    cmd = "mv " + str(ms) + ".pdf static/"
+    cmd = "mv " + str(ms) + ".pdf " + os.getcwd() + "/static/"
     os.system(cmd)
 
-    return "static/" + str(ms) + ".pdf"
+    return os.getcwd() + "/static/" + str(ms) + ".pdf"
 
 class DadosPessoais():
     def __init__(self, dadosPessoaisJSON):
