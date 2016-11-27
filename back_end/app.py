@@ -30,7 +30,7 @@ def geraCurriculo(dados):
     content += "\end{document}"
 
     ms = int(round(time.time() * 1000))
-    texFileName = os.getcwd() + "static/" + str(ms) + ".tex"
+    texFileName = os.getcwd() + "/static/" + str(ms) + ".tex"
 
     with open(texFileName,'w') as f:
         f.write(content)
