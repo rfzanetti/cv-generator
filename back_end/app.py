@@ -48,7 +48,7 @@ def geraCurriculo(dados):
     #cmd = "mv " + str(ms) + ".pdf " + os.getcwd() + "/static/"
     #os.system(cmd)
 
-    return os.getcwd() + "/" + str(ms) + ".pdf"
+    return str(ms) + ".pdf"
 
 class DadosPessoais():
     def __init__(self, dadosPessoaisJSON):
