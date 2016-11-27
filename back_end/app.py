@@ -39,11 +39,11 @@ def geraCurriculo(dados):
     os.system(cmd)
 
     os.unlink(texFileName)
-    log = str(ms) + ".log"
+    log =  os.getcwd() + '/' + str(ms) + ".log"
     os.unlink(log)
-    aux = str(ms) + ".aux"
+    aux =  os.getcwd() + '/' + str(ms) + ".aux"
     os.unlink(aux)
-    out = str(ms) + ".out"
+    out =  os.getcwd() + '/' + str(ms) + ".out"
     os.unlink(out)
 
     cmd = "mv " + str(ms) + ".pdf " + os.getcwd() + "/static/"
